@@ -1,0 +1,24 @@
+import random
+
+MyArr = [[0 for _ in range(10)] for _ in range(10)]
+
+for x in range(10):
+    for y in range(10):
+        MyArr[x][y] = random.randint(1, 100)
+
+def BubbleSort():
+    max = 9
+    swap = False
+    while swap == False:
+        swap = True
+        for x in range(max+1):
+            for y in range(max):
+                if MyArr[x][y] > MyArr[x][y+1]:
+                    temp = MyArr[x][y]
+                    MyArr[x][y] = MyArr[x][y+1]
+                    MyArr[x][y+1] = temp
+                    swap = False
+
+BubbleSort()
+for row in MyArr:
+    print(row)
